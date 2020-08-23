@@ -21,12 +21,14 @@ class App extends Component{
 
   render() {
     const {monsters, searchField } = this.state;
+    console.log(monsters);
     const filteredMonsters = monsters.filter(monster => 
       monster.name.toLowerCase().includes(searchField.toLocaleLowerCase())
     );
     
     return (
       <div className="App">
+        <h1> Monsters Rolodex </h1>
         <SearchBox 
         placeholder = "search monsters"
         handleChange={e => this.setState({monsters: e.target.value})}
